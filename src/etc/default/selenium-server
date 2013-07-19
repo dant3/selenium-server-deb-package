@@ -29,8 +29,11 @@ SELENIUM_LOG=/var/log/selenium-server/$NAME.log
 # port for HTTP connector (default 4444)
 HTTP_PORT=4444
 
+# role of this server node
+SELENIUM_ROLE=node
+
 # arguments to pass to selenium-server.
-SELENIUM_ARGS="-port $HTTP_PORT"
+SELENIUM_ARGS="-port $HTTP_PORT -role $SELENIUM_ROLE"
 
 # xvfb arguments
 XVFB_ARGS="-a -s\"-ac\""

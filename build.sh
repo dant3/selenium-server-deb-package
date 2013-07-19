@@ -9,7 +9,7 @@ pkg_dir=$here/pkg
 
 select_version() {
 	if [ -z $version ] ; then
-		version=2.0rc2
+		version=2.33.0
 	fi
 	echo "Builing version $version"
 }
@@ -50,9 +50,10 @@ clean() {
 }
 
 package() {
+        chmod 0755 -Rfv $build_dir
 	echo 'Packaging ...'
 	dpkg-deb --build $build_dir > /dev/null
-	mv $here/build.deb $pkg_dir/selenium-server-$version.deb	
+	mv $here/build.deb $pkg_dir/selenium-server-$version.deb
 }
 
 usage() {
